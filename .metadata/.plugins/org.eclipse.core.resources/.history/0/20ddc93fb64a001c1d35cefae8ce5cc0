@@ -1,0 +1,112 @@
+package com.rishabh.Payroll_Application;
+
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+
+public class Application {
+
+	protected JFrame frm;
+	protected JTextField tf_name,tf_age,tf_id,tf_salary;
+	protected JLabel lb_name,lb_id;
+	protected JButton btn_done;
+	App a;
+
+
+	protected Application() {
+		initialize();
+	}
+
+	protected void initialize() {
+		frm = new JFrame();
+		frm.setTitle("Application");
+		frm.setBounds(100, 100, 950, 500);
+		frm.getContentPane().setForeground(Color.PINK);
+		frm.getContentPane().setBackground(new Color(144,238,144));
+		frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frm.setResizable(false);
+		frm.getContentPane().setLayout(null);
+		
+		lb_name = new JLabel("Name Of Employee");
+		lb_name.setHorizontalAlignment(SwingConstants.RIGHT);
+		lb_name.setFont(new Font("Times New Roman", Font.BOLD, 19));
+		lb_name.setBounds(0, 95, 170, 30);
+		frm.getContentPane().add(lb_name);
+		
+		tf_name = new JTextField();
+		tf_name.setBackground(new Color(144,200,144));
+		tf_name.setForeground(new Color(128, 0, 0));
+		tf_name.setBounds(180, 95, 180, 30);
+		frm.getContentPane().add(tf_name);
+		tf_name.setColumns(10);
+		
+		
+		lb_id = new JLabel("Employee ID");
+		lb_id.setHorizontalAlignment(SwingConstants.RIGHT);
+		lb_id.setFont(new Font("Times New Roman", Font.BOLD, 19));
+		lb_id.setBounds(360, 95, 170, 30);
+		frm.getContentPane().add(lb_id);
+		
+		tf_id = new JTextField();
+		tf_id.setBackground(new Color(144,200,144));
+		tf_id.setForeground(new Color(128, 0, 0));
+		tf_id.setBounds(540, 95, 180, 30);
+		frm.getContentPane().add(tf_id);
+		tf_id.setColumns(10);
+		
+		JLabel lb_age = new JLabel("Age");
+		lb_age.setHorizontalAlignment(SwingConstants.RIGHT);
+		lb_age.setFont(new Font("Times New Roman", Font.BOLD, 19));
+		lb_age.setBounds(635, 95, 170, 30);
+		frm.getContentPane().add(lb_age);
+		
+		tf_age = new JTextField();
+		tf_age.setBackground(new Color(144,200,144));
+		tf_age.setForeground(new Color(128, 0, 0));
+		tf_age.setBounds(815, 95, 65, 30);
+		frm.getContentPane().add(tf_age);
+		tf_age.setColumns(10);
+		
+	
+	/*----------------------------------------------------------------------------------------------------------------------------*/	
+//		tf_days = new JTextField();
+//		tf_days.setBounds(118, 76, 96, 20);
+//		frm.getContentPane().add(tf_days);
+//		tf_days.setColumns(10);
+		
+//		tf_id = new JTextField();
+//		tf_id.setBounds(459, 27, 96, 20);
+//		frm.getContentPane().add(tf_id);
+//		tf_id.setColumns(10);
+		
+		tf_salary = new JTextField();
+		tf_salary.setBounds(451, 76, 96, 20);
+		frm.getContentPane().add(tf_salary);
+		tf_salary.setColumns(10);
+		
+//		JLabel lb_id = new JLabel("id");
+//		lb_id.setBounds(358, 30, 49, 14);
+//		frm.getContentPane().add(lb_id);
+		
+//		JLabel lb_days = new JLabel("days");
+//		lb_days.setBounds(59, 79, 49, 14);
+//		frm.getContentPane().add(lb_days);
+		
+		JLabel lb_salary = new JLabel("salary");
+		lb_salary.setBounds(392, 79, 49, 14);
+		frm.getContentPane().add(lb_salary);
+		
+		btn_done = new JButton("done");
+		btn_done.setBounds(279, 221, 89, 23);
+		frm.getContentPane().add(btn_done);
+		
+	}
+}

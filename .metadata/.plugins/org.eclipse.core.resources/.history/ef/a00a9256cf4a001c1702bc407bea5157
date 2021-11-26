@@ -1,0 +1,112 @@
+package com.rishabh.Payroll_Application;
+
+public class Calculate {
+static String x;
+
+
+float cal(){
+	Application design = new Application();
+	int age =Integer.parseInt(design.tf_age.getText());
+	int salary =Integer.parseInt(design.tf_income.getText());
+
+	int income = salary * 12;
+	int tax, net_income;
+	float net_salary;
+		if(income >= 1000000) {
+			tax = 100000 + ((income-1000000) * 30 / 100);
+			net_income = income - tax;
+			net_salary = net_income/12;
+			return net_salary;
+			
+		}else if(income >= 500000) {
+			tax = ((income-500000) * 20 / 100);
+			net_income = income - tax;
+			net_salary = net_income/12;	
+			return net_salary;
+			
+		}else {
+			tax = 0;
+			net_income = income;
+			net_salary = net_income/12;
+			return net_salary;
+			
+		}	
+}
+//	public static void main(String[] args) {
+//		final Application design = new Application();
+//		
+////		int age =Integer.parseInt(design.tf_age.getText());
+////		int salary =Integer.parseInt(design.tf_income.getText());
+//		int salary = 50000;
+//		int income = salary * 12;
+//		int tax, net_income;
+//		float net_salary;
+////		if(age>80) {
+//			if(income >= 1000000) {
+//				tax = 100000 + ((income-1000000) * 30 / 100);
+//				net_income = income - tax;
+//				net_salary = net_income/12;
+//				
+//			}else if(income >= 500000) {
+//				tax = ((income-500000) * 20 / 100);
+//				net_income = income - tax;
+//				net_salary = net_income/12;		
+//				
+//			}else {
+//				tax = 0;
+//				net_income = income;
+//				net_salary = net_income/12;
+//				
+//			}	
+////		}else if(age>60) {
+////			if(income >= 1000000) {
+////				tax = 110000 + ((income-1000000) * 30 / 100);
+////				net_income = income - tax;
+////				net_salary = net_income/12;
+////				
+////			}else if(income >= 500000) {
+////				tax = 10000 + ((income-500000) * 20 / 100);
+////				net_income = income - tax;
+////				net_salary = net_income/12;
+////				
+////			}else if(income > 300000) {
+////				tax = ((income-300000) * 5 / 100);
+////				net_income = income - tax;
+////				net_salary = net_income/12;
+////				
+////			}else {
+////				tax = 0;
+////				net_income = income;
+////				net_salary = net_income/12;
+////				
+////			}
+////		}else {
+////			if(income >= 1000000) {
+////				tax = 112500 + ((income-1000000) * 30 / 100);
+////				net_income = income - tax;
+////				net_salary = net_income/12;
+////				
+////			}else if(income >= 500000) {
+////				tax = 25000 + ((income-500000) * 20 / 100);
+////				net_income = income - tax;
+////				net_salary = net_income/12;
+////				
+////			}else if(income > 250000) {
+////				tax = ((income-250000) * 5 / 100);
+////				net_income = income - tax;
+////				net_salary = net_income/12;
+////				
+////			}else {
+////				tax = 0;
+////				net_income = income;
+////				net_salary = net_income/12;
+////				
+////			}
+////		}
+		x = Float.toString(net_salary);
+		design.tf_salary.setText(Float.toString(net_salary));
+		GeteSet emp = new GeteSet();
+		emp.seteSalary(x);
+	}
+
+}

@@ -1,0 +1,97 @@
+package com.rishabh.Payroll_Application;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.Font;
+
+public class modul {
+
+	private JFrame frm;
+	private JTextField tf_name;
+	private JTextField tf_days;
+	private JTextField tf_id;
+	private JTextField tf_salary;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					modul window = new modul();
+					window.frm.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public modul() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frm = new JFrame();
+		frm.setTitle("Application");
+		frm.setBounds(100, 100, 820, 430);
+		frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frm.setResizable(false);
+		frm.getContentPane().setLayout(null);
+		
+		tf_name = new JTextField();
+		tf_name.setBounds(118, 27, 96, 20);
+		frm.getContentPane().add(tf_name);
+		tf_name.setColumns(10);
+		
+		JLabel lb_name = new JLabel("Name");
+		lb_name.setFont(new Font("Lucida Sans Typewriter", Font.BOLD, 14));
+		lb_name.setBounds(59, 30, 49, 14);
+		frm.getContentPane().add(lb_name);
+		
+		tf_days = new JTextField();
+		tf_days.setBounds(118, 76, 96, 20);
+		frm.getContentPane().add(tf_days);
+		tf_days.setColumns(10);
+		
+		tf_id = new JTextField();
+		tf_id.setBounds(459, 27, 96, 20);
+		frm.getContentPane().add(tf_id);
+		tf_id.setColumns(10);
+		
+		tf_salary = new JTextField();
+		tf_salary.setBounds(451, 76, 96, 20);
+		frm.getContentPane().add(tf_salary);
+		tf_salary.setColumns(10);
+		
+		JLabel lb_id = new JLabel("id");
+		lb_id.setFont(new Font("Lucida Sans Typewriter", Font.BOLD, 14));
+		lb_id.setBounds(358, 30, 49, 14);
+		frm.getContentPane().add(lb_id);
+		
+		JLabel lb_days = new JLabel("days");
+		lb_days.setFont(new Font("Lucida Sans Typewriter", Font.BOLD, 14));
+		lb_days.setBounds(59, 79, 49, 14);
+		frm.getContentPane().add(lb_days);
+		
+		JLabel lb_salary = new JLabel("salary");
+		lb_salary.setFont(new Font("Lucida Sans Typewriter", Font.BOLD, 14));
+		lb_salary.setBounds(297, 79, 144, 34);
+		frm.getContentPane().add(lb_salary);
+		
+		JButton btn_done = new JButton("done");
+		btn_done.setBounds(279, 221, 89, 23);
+		frm.getContentPane().add(btn_done);
+	}
+}

@@ -1,0 +1,136 @@
+package com.rishabh.Payroll_Application;
+
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
+import org.hibernate.service.ServiceRegistryBuilder;
+
+public class App 
+{	
+    public static void main(String [] args){	
+    	EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				final Application design = new Application();
+					design.frm.setVisible(true);
+			
+		design.btn_cal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+		
+    	String name = design.tf_name.getText();
+    	String id = design.tf_id.getText();
+    	String age = design.tf_age.getText();
+    	String bName = design.tf_BName.getText();
+    	String bNo = design.tf_BNo.getText();
+    	String income = design.tf_income.getText();
+
+//    	Calculate calu = new Calculate();
+//    	String salary =Float.toString(calu.cal());
+//    	int salary =Integer.parseInt(design.tf_income.getText());
+    	int salary = Integer.parseInt(salary * 12;
+    	int tax, net_income;
+    	float net_salary;
+    	
+    	
+    	if(age>80) {
+			if(salary >= 1000000) {
+				tax = 100000 + ((salary-1000000) * 30 / 100);
+				net_income = salary - tax;
+				net_salary = net_income/12;
+				
+			}else if(salary >= 500000) {
+				tax = ((salary-500000) * 20 / 100);
+				net_income = salary - tax;
+				net_salary = net_income/12;		
+				
+			}else {
+				tax = 0;
+				net_income = salary;
+				net_salary = net_income/12;
+				
+			}	
+		}else if(age>60) {
+			if(salary >= 1000000) {
+				tax = 110000 + ((salary-1000000) * 30 / 100);
+				net_income = salary - tax;
+				net_salary = net_income/12;
+				
+			}else if(salary >= 500000) {
+				tax = 10000 + ((salary-500000) * 20 / 100);
+				net_income = salary - tax;
+				net_salary = net_income/12;
+				
+			}else if(salary > 300000) {
+				tax = ((salary-300000) * 5 / 100);
+				net_income = salary - tax;
+				net_salary = net_income/12;
+				
+			}else {
+				tax = 0;
+				net_income = salary;
+				net_salary = net_income/12;
+				
+			}
+		}else {
+			if(salary >= 1000000) {
+				tax = 112500 + ((salary-1000000) * 30 / 100);
+				net_income = salary - tax;
+				net_salary = net_income/12;
+				
+			}else if(salary >= 500000) {
+				tax = 25000 + ((salary-500000) * 20 / 100);
+				net_income = salary - tax;
+				net_salary = net_income/12;
+				
+			}else if(salary > 250000) {
+				tax = ((salary-250000) * 5 / 100);
+				net_income = salary - tax;
+				net_salary = net_income/12;
+				
+			}else {
+				tax = 0;
+				net_income = salary;
+				net_salary = net_income/12;
+				
+			}
+		}
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	GeteSet emp = new GeteSet();
+    	emp.seteName(name);
+    	emp.seteId(id);
+    	emp.seteWDays(age);
+    	emp.setbName(bName);
+    	emp.setbNo(bNo);
+    	emp.seteIncome(income);
+    	emp.seteSalary(Float.toString(net_salary));
+    	
+    	design.tf_salary.setText(Float.toString(net_salary));
+
+    	
+    	Configuration con = new Configuration().configure().addAnnotatedClass(GeteSet.class);
+        ServiceRegistry reg = new ServiceRegistryBuilder().applySettings(con.getProperties()).buildServiceRegistry();        
+        SessionFactory sf = con.buildSessionFactory(reg);        
+        Session session = sf.openSession();         
+        Transaction tx = session.beginTransaction();
+    	session.save(emp);
+       	tx.commit();
+    	
+    
+			}
+		});
+		
+			}
+		});
+    }
+}

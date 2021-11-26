@@ -1,0 +1,90 @@
+package com.rishabh.Payroll_Application;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+
+public class modul {
+
+	private JFrame frm;
+	private JTextField tf_name;
+	private JTextField tf_days;
+	private JTextField tf_id;
+	private JTextField tf_salary;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					modul window = new modul();
+					window.frm.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public modul() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frm = new JFrame();
+		frm.setBounds(100, 100, 820, 429);
+		frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frm.getContentPane().setLayout(null);
+		
+		tf_name = new JTextField();
+		tf_name.setBounds(118, 27, 96, 20);
+		frm.getContentPane().add(tf_name);
+		tf_name.setColumns(10);
+		
+		JLabel lb_name = new JLabel("Name");
+		lb_name.setBounds(59, 30, 49, 14);
+		frm.getContentPane().add(lb_name);
+		
+		tf_days = new JTextField();
+		tf_days.setBounds(118, 76, 96, 20);
+		frm.getContentPane().add(tf_days);
+		tf_days.setColumns(10);
+		
+		tf_id = new JTextField();
+		tf_id.setBounds(459, 27, 96, 20);
+		frm.getContentPane().add(tf_id);
+		tf_id.setColumns(10);
+		
+		tf_salary = new JTextField();
+		tf_salary.setBounds(451, 76, 96, 20);
+		frm.getContentPane().add(tf_salary);
+		tf_salary.setColumns(10);
+		
+		JLabel lblNewLabel = new JLabel("id");
+		lblNewLabel.setBounds(358, 30, 49, 14);
+		frm.getContentPane().add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("days");
+		lblNewLabel_1.setBounds(59, 79, 49, 14);
+		frm.getContentPane().add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("salary");
+		lblNewLabel_2.setBounds(392, 79, 49, 14);
+		frm.getContentPane().add(lblNewLabel_2);
+		
+		JButton btn_done = new JButton("done");
+		btn_done.setBounds(279, 221, 89, 23);
+		frm.getContentPane().add(btn_done);
+	}
+}

@@ -1,0 +1,47 @@
+package com.rishabh.Payroll_Application;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class GeteSet {
+
+	
+	private String eName;
+	@Id
+	private String eId;
+	private int eWDays;
+	private int eSalary;
+	
+	public String geteName() {
+		return eName;
+	}
+	public void seteName(String eName) {
+		this.eName = eName;
+	}
+	
+	public String geteId() {
+		return eId;
+	}
+	public void seteId(String eId) {
+		this.eId = eId;
+	}
+	
+	public int geteWDays() {
+		return eWDays;
+	}
+	public void seteWDays(int eWDays) {
+		this.eWDays = eWDays;
+	}
+	
+	public int geteSalary() {
+		return eSalary;
+	}
+	public void seteSalary(int eSalary) {
+		this.eSalary = eSalary;
+	}
+	
+	
+	
+	
+}

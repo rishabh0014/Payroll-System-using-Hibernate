@@ -1,0 +1,55 @@
+package com.rishabh.Payroll_Application;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+
+public class modul {
+
+	private JFrame frm;
+	private JTextField tf_name;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					modul window = new modul();
+					window.frm.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public modul() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frm = new JFrame();
+		frm.setBounds(100, 100, 820, 429);
+		frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frm.getContentPane().setLayout(null);
+		
+		tf_name = new JTextField();
+		tf_name.setBounds(198, 27, 96, 20);
+		frm.getContentPane().add(tf_name);
+		tf_name.setColumns(10);
+		
+		JLabel lb_name = new JLabel("New label");
+		lb_name.setBounds(58, 40, 49, 14);
+		frm.getContentPane().add(lb_name);
+	}
+}

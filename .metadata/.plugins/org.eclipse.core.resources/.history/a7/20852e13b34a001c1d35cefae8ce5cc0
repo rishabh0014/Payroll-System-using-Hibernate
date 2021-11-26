@@ -1,0 +1,164 @@
+package com.rishabh.Payroll_Application;
+
+import java.awt.Color;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JTextArea;
+
+public class modul {
+
+	private JFrame frm;
+	private JTextField tf_name;
+	private JTextField tf_age;
+	private JTextField tf_id;
+	private JTextField tf_salary;
+	private JTextField textField;
+	private JTextField textField_1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					modul window = new modul();
+					window.frm.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public modul() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frm = new JFrame();
+		frm.setTitle("Application");
+		frm.setBounds(100, 100, 950, 500);
+		frm.getContentPane().setForeground(Color.PINK);
+		frm.getContentPane().setBackground(new Color(144,238,144));
+		frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frm.setResizable(false);
+		frm.getContentPane().setLayout(null);
+		
+		tf_name = new JTextField();
+		tf_name.setBackground(new Color(144,200,144));
+		tf_name.setForeground(new Color(128, 0, 0));
+		tf_name.setBounds(180, 95, 180, 30);
+		frm.getContentPane().add(tf_name);
+		tf_name.setColumns(10);
+		
+		JLabel lb_name = new JLabel("Name Of Employee");
+		lb_name.setHorizontalAlignment(SwingConstants.RIGHT);
+		lb_name.setFont(new Font("Times New Roman", Font.BOLD, 19));
+		lb_name.setBounds(0, 95, 170, 30);
+		frm.getContentPane().add(lb_name);
+		
+		tf_age = new JTextField();
+		tf_age.setBackground(new Color(144,200,144));
+		tf_age.setForeground(new Color(128, 0, 0));
+		tf_age.setBounds(815, 95, 65, 30);
+		frm.getContentPane().add(tf_age);
+		tf_age.setColumns(10);
+		
+		tf_id = new JTextField();
+		tf_id.setBackground(new Color(144,200,144));
+		tf_id.setForeground(new Color(128, 0, 0));
+		tf_id.setBounds(540, 95, 180, 30);
+		frm.getContentPane().add(tf_id);
+		tf_id.setColumns(10);
+		
+		tf_salary = new JTextField();
+		tf_salary.setBackground(new Color(144,200,144));
+		tf_salary.setForeground(new Color(128, 0, 0));
+		tf_salary.setBounds(645, 330,180, 30);
+		frm.getContentPane().add(tf_salary);
+		tf_salary.setColumns(10);
+		
+		JLabel lb_id = new JLabel("Employee ID");
+		lb_id.setHorizontalAlignment(SwingConstants.RIGHT);
+		lb_id.setFont(new Font("Times New Roman", Font.BOLD, 19));
+		lb_id.setBounds(360, 95, 170, 30);
+		frm.getContentPane().add(lb_id);
+		
+		JLabel lb_age = new JLabel("Age");
+		lb_age.setHorizontalAlignment(SwingConstants.RIGHT);
+		lb_age.setFont(new Font("Times New Roman", Font.BOLD, 19));
+		lb_age.setBounds(635, 95, 170, 30);
+		frm.getContentPane().add(lb_age);
+		
+		JLabel lb_salary = new JLabel("Amount Credited to Your Bank Account");
+		lb_salary.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_salary.setFont(new Font("Times New Roman", Font.BOLD, 19));
+		lb_salary.setBounds(550, 290, 370, 30);
+		frm.getContentPane().add(lb_salary);
+		
+		JButton btn_cal = new JButton("Calculate Salary");
+		btn_cal.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		btn_cal.setBounds(645, 224, 150, 40);
+		frm.getContentPane().add(btn_cal);
+		
+		JLabel lb_head = new JLabel("Employee Payroll System");
+		lb_head.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_head.setForeground(new Color(139, 0, 139));
+		lb_head.setFont(new Font("Elephant", Font.BOLD, 43));
+		lb_head.setBounds(0, 10, 940, 54);
+		frm.getContentPane().add(lb_head);
+		
+		JTextArea txt_rcpt = new JTextArea();
+		txt_rcpt.setBounds(35, 250, 455, 165);
+		frm.getContentPane().add(txt_rcpt);
+		
+		textField = new JTextField();
+		textField.setBackground(new Color(144,200,144));
+		textField.setForeground(new Color(128, 0, 0));
+		textField.setBounds(180, 160, 180, 30);
+		frm.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JLabel lb_BName = new JLabel("Bank Name");
+		lb_BName.setHorizontalAlignment(SwingConstants.RIGHT);
+		lb_BName.setFont(new Font("Times New Roman", Font.BOLD, 19));
+		lb_BName.setBounds(0, 160, 170, 30);
+		frm.getContentPane().add(lb_BName);
+		
+		JLabel lb_BNo = new JLabel("Bank Account No.");
+		lb_BNo.setHorizontalAlignment(SwingConstants.RIGHT);
+		lb_BNo.setFont(new Font("Times New Roman", Font.BOLD, 19));
+		lb_BNo.setBounds(400, 163, 160, 30);
+		frm.getContentPane().add(lb_BNo);
+		
+		textField_1 = new JTextField();
+		textField_1.setBackground(new Color(144,200,144));
+		textField_1.setForeground(new Color(128, 0, 0));
+		textField_1.setBounds(570, 160, 180, 30);
+		frm.getContentPane().add(textField_1);
+		textField_1.setColumns(10);
+		
+		JButton btnNewButton = new JButton("Exit");
+		btnNewButton.setFont(new Font("Times New Roman", Font.PLAIN, 19));
+		btnNewButton.setBounds(775, 400, 95, 30);
+		frm.getContentPane().add(btnNewButton);
+		
+		JButton btn_clr = new JButton("Clear");
+		btn_clr.setFont(new Font("Times New Roman", Font.PLAIN, 19));
+		btn_clr.setBounds(655, 400, 95, 30);
+		frm.getContentPane().add(btn_clr);
+	}
+}

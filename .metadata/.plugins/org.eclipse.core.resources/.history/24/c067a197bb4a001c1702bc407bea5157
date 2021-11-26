@@ -1,0 +1,10 @@
+package com.rishabh.Payroll_Application;
+
+public class Calculate {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

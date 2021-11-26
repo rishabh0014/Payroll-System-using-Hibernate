@@ -1,0 +1,57 @@
+package com.rishabh.Payroll_Application;
+
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
+import org.hibernate.service.ServiceRegistryBuilder;
+
+public class App 
+{	
+    public static void main(String [] args){	
+    	EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				final Application design = new Application();
+					design.frm.setVisible(true);
+			
+		design.btn_cal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+		
+    	String name = design.tf_name.getText();
+    	String id = design.tf_id.getText();
+    	String age = design.tf_age.getText();
+    	String bName = design.tf_BName.getText();
+    	String bNo = design.tf_BNo.getText();
+    	String income = design.tf_income.getText();
+    	int salary = Integer.parseInt(age) * 3000;
+    	
+    	design.tf_salary.setText(Integer.toString(salary));
+    	
+    	GeteSet emp = new GeteSet();
+    	emp.seteName(name);
+    	emp.seteId(id);
+    	emp.seteWDays(age);
+    	emp.seteIncome(income);
+    	emp.seteSalary(salary);
+    	
+    	Configuration con = new Configuration().configure().addAnnotatedClass(GeteSet.class);
+        ServiceRegistry reg = new ServiceRegistryBuilder().applySettings(con.getProperties()).buildServiceRegistry();        
+        SessionFactory sf = con.buildSessionFactory(reg);        
+        Session session = sf.openSession();         
+        Transaction tx = session.beginTransaction();
+    	session.save(emp);
+       	tx.commit();
+    	
+    
+			}
+		});
+		
+			}
+		});
+    }
+}
